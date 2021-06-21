@@ -1,30 +1,30 @@
-package com.everis.creditsloans.dao.entity;
+package com.everis.creditsloans.dto;
 
+import com.everis.creditsloans.dao.entity.BusinessClient;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Data
-@Document
 @NoArgsConstructor
 @AllArgsConstructor
-public class BusinessCreditCard {
-    @Id
-    private UUID idBusinessCreditCard;
+@Builder
+public class BusinessCreditDTO {
+    private UUID idBusinessCredit;
 
-    @DBRef
-    private PCreditCard pCreditCard;
+    private UUID idBusinessClient;
+    private String ruc;
 
-    @DBRef
-    private BusinessClient businessClient;
+    private String creditName;
+    private String creditType;
     private BigDecimal creditBalance;
     private String currencyType;
+    private BigDecimal amountPaid;
     private boolean state;
-
 }

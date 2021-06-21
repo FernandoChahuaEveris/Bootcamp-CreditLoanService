@@ -1,5 +1,7 @@
-package com.everis.creditsloans.dao.entity;
+package com.everis.creditsloans.dto;
 
+import com.everis.creditsloans.dao.entity.PCreditCard;
+import com.everis.creditsloans.dao.entity.PersonalClient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,21 +14,19 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Data
-@Document
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class BusinessCredit {
-    @Id
-    private UUID idBusinessCredit;
+public class PersonalCreditDTO {
 
-    @DBRef
-    private BusinessClient businessClient;
+    private UUID idPersonalCredit;
+
+    private UUID idPersonalClient;
+    private String dni;
 
     private String creditName;
     private String creditType;
     private BigDecimal creditBalance;
     private String currencyType;
     private BigDecimal amountPaid;
-    private boolean state;
 }

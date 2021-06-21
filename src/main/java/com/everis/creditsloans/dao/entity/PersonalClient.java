@@ -1,4 +1,19 @@
 package com.everis.creditsloans.dao.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.UUID;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PersonalClient {
+    private UUID idPersonalClient;
+
+    private String dni;
+
 }
