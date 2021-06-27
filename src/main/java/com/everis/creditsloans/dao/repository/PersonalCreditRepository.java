@@ -10,5 +10,5 @@ import java.util.UUID;
 
 @Repository
 public interface PersonalCreditRepository extends ReactiveMongoRepository<PersonalCredit, UUID> {
-    Mono<PersonalCredit> findFirstByPersonalClientIdPersonalClient(UUID idPersonalClient);
+  Mono<PersonalCredit> findFirstByPersonalClientIdPersonalClient(UUID idPersonalClient);
 }

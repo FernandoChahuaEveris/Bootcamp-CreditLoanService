@@ -12,8 +12,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PersonalClient {
-    private UUID idPersonalClient;
+  private UUID idPersonalClient;
 
-    private String dni;
+  private String dni;
 
 }

@@ -1,6 +1,5 @@
 package com.everis.creditsloans.dao.entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,14 +17,12 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 public class PersonalCredit {
-    @Id
-    private UUID idPersonalCredit;
-
-    private PersonalClient personalClient;
-
-    private String creditName;
-    private String creditType;
-    private BigDecimal creditBalance;
-    private String currencyType;
-    private BigDecimal amountPaid;
+  @Id
+  private UUID idPersonalCredit;
+  private PersonalClient personalClient;
+  private String creditName;
+  private String creditType;
+  private BigDecimal creditBalance;
+  private String currencyType;
+  private BigDecimal amountPaid;
 }

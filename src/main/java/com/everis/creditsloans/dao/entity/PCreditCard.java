@@ -17,18 +17,18 @@ import java.util.UUID;
 @Builder
 /*
  * Entidad Cuenta Corriente
- * */
+ */
 public class PCreditCard {
-    @Id
-    private UUID idPCreditCard;
+  @Id
+  private UUID idPCreditCard;
 
-    private String productName;
+  private String productName;
 
-    private String creditCardType;
+  private String creditCardType;
 
-    private BigDecimal creditBalance;
+  private BigDecimal creditBalance;
 
-    private String currencyType;
+  private String currencyType;
 
-    private boolean state;
+  private boolean state;
 }

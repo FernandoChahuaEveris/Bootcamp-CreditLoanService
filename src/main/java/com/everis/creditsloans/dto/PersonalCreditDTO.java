@@ -19,14 +19,12 @@ import java.util.UUID;
 @Builder
 public class PersonalCreditDTO {
 
-    private UUID idPersonalCredit;
-
-    private UUID idPersonalClient;
-    private String dni;
-
-    private String creditName;
-    private String creditType;
-    private BigDecimal creditBalance;
-    private String currencyType;
-    private BigDecimal amountPaid;
+  private UUID idPersonalCredit;
+  private UUID idPersonalClient;
+  private String dni;
+  private String creditName;
+  private String creditType;
+  private BigDecimal creditBalance;
+  private String currencyType;
+  private BigDecimal amountPaid;
 }

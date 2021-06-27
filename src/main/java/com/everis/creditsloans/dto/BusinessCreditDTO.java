@@ -16,15 +16,13 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class BusinessCreditDTO {
-    private UUID idBusinessCredit;
-
-    private UUID idBusinessClient;
-    private String ruc;
-
-    private String creditName;
-    private String creditType;
-    private BigDecimal creditBalance;
-    private String currencyType;
-    private BigDecimal amountPaid;
-    private boolean state;
+  private UUID idBusinessCredit;
+  private UUID idBusinessClient;
+  private String ruc;
+  private String creditName;
+  private String creditType;
+  private BigDecimal creditBalance;
+  private String currencyType;
+  private BigDecimal amountPaid;
+  private boolean state;
 }

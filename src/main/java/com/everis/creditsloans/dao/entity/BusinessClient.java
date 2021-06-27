@@ -13,8 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BusinessClient {
-    @Id
-    private UUID idBusinessClient;
-
-    private String ruc;
+  @Id
+  private UUID idBusinessClient;
+  private String ruc;
 }

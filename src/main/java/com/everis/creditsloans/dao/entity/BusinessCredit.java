@@ -17,16 +17,15 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class BusinessCredit {
-    @Id
-    private UUID idBusinessCredit;
+  @Id
+  private UUID idBusinessCredit;
 
-    @DBRef
-    private BusinessClient businessClient;
-
-    private String creditName;
-    private String creditType;
-    private BigDecimal creditBalance;
-    private String currencyType;
-    private BigDecimal amountPaid;
-    private boolean state;
+  @DBRef
+  private BusinessClient businessClient;
+  private String creditName;
+  private String creditType;
+  private BigDecimal creditBalance;
+  private String currencyType;
+  private BigDecimal amountPaid;
+  private boolean state;
 }
