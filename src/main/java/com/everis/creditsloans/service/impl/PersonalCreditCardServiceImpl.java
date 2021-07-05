@@ -53,4 +53,9 @@ public class PersonalCreditCardServiceImpl implements PersonalCreditCardService{
                 .findById(uuid)
                 .flatMap(p -> personalCreditCardRepository.deleteById(p.getIdPersonalCreditCard()).thenReturn(p));
     }
+
+	@Override
+	public Flux<PersonalCreditCard> findAllByDni(String dni) {
+		return personalCreditCardRepository.findAllByPersonalClientDni(dni);
+	}
 }

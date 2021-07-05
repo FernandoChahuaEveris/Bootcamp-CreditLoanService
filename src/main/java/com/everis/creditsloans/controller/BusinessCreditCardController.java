@@ -48,5 +48,10 @@ public class BusinessCreditCardController {
     public Mono<BusinessCreditCard> update(@PathVariable("id")UUID id, @RequestBody BusinessCreditCard entity){
         return businessCreditCardService.update(id,entity);
     }
+    
+    @GetMapping("/ruc/{ruc}")
+    public Flux<BusinessCreditCard> findAllByRuc(@PathVariable("ruc")String ruc){
+    	return businessCreditCardService.findAllByRuc(ruc);
+    }
 }
 

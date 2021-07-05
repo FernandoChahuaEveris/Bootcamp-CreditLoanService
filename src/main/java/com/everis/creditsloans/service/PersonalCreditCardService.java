@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import com.everis.creditsloans.dao.entity.PersonalCreditCard;
 
-public interface PersonalCreditCardService extends CRUDService<PersonalCreditCard,UUID>{
+import reactor.core.publisher.Flux;
 
+public interface PersonalCreditCardService extends CRUDService<PersonalCreditCard,UUID>{
+	Flux<PersonalCreditCard> findAllByDni(String dni);
 }

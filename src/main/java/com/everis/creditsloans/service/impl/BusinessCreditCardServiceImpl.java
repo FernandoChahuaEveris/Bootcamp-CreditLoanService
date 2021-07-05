@@ -55,4 +55,9 @@ public class BusinessCreditCardServiceImpl implements BusinessCreditCardService{
                 .flatMap(p -> businessCreditCardRepository.deleteById(p.getIdBusinessCreditCard()).thenReturn(p));
     }
 
+	@Override
+	public Flux<BusinessCreditCard> findAllByRuc(String ruc) {
+		return businessCreditCardRepository.findAllByBusinessClientRuc(ruc);
+	}
+
 }
