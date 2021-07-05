@@ -18,9 +18,8 @@ public class PersonalCreditCard {
     @Id
     private UUID idPersonalCreditCard;
 
-    @DBRef
     private PCreditCard pCreditCard;
-    @DBRef
+    
     private PersonalClient personalClient;
 
     private BigDecimal creditBalance;

@@ -18,10 +18,8 @@ public class BusinessCreditCard {
     @Id
     private UUID idBusinessCreditCard;
 
-    @DBRef
     private PCreditCard pCreditCard;
 
-    @DBRef
     private BusinessClient businessClient;
     private BigDecimal creditBalance;
     private String currencyType;
