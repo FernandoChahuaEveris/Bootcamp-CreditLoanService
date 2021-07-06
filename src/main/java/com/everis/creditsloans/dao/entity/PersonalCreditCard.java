@@ -15,14 +15,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @Data
 public class PersonalCreditCard {
-  @Id
-  private UUID idPersonalCreditCard;
+    @Id
+    private UUID idPersonalCreditCard;
 
-  @DBRef
-  private PCreditCard pCreditCard;
-  @DBRef
-  private PersonalClient personalClient;
-  private BigDecimal creditBalance;
-  private String currencyType;
-  private boolean state;
+    private PCreditCard pCreditCard;
+    
+    private PersonalClient personalClient;
+
+    private BigDecimal creditBalance;
+    private String currencyType;
+    private boolean state;
 }
