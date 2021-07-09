@@ -2,7 +2,10 @@ package com.everis.creditsloans.service.impl;
 
 import java.util.UUID;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import com.everis.creditsloans.dao.entity.BusinessCreditCard;
@@ -14,12 +17,14 @@ import com.everis.creditsloans.service.PersonalCreditCardService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Slf4j
 @Service
-public class PersonalCreditCardServiceImpl implements PersonalCreditCardService{
-	@Autowired
-	private PersonalCreditCardRepository personalCreditCardRepository;
-	
-	@Override
+public class PersonalCreditCardServiceImpl implements PersonalCreditCardService {
+
+    @Autowired
+    private PersonalCreditCardRepository personalCreditCardRepository;
+
+    @Override
     public Mono<PersonalCreditCard> findById(UUID uuid) {
         return personalCreditCardRepository.findById(uuid)
                 .switchIfEmpty(Mono.error(new Exception("No se encontro el producto")));
@@ -54,8 +59,13 @@ public class PersonalCreditCardServiceImpl implements PersonalCreditCardService{
                 .flatMap(p -> personalCreditCardRepository.deleteById(p.getIdPersonalCreditCard()).thenReturn(p));
     }
 
-	@Override
-	public Flux<PersonalCreditCard> findAllByDni(String dni) {
-		return personalCreditCardRepository.findAllByPersonalClientDni(dni);
-	}
+    @Override
+    public Flux<PersonalCreditCard> findAllByDni(String dni) {
+        return personalCreditCardRepository.findAllByPersonalClientDni(dni);
+    }
+
+    @KafkaListener(topics = "CreditCardPersonal")
+    public void sendMessage(String message) {
+        log.info("Send data" + message);
+    }
 }
