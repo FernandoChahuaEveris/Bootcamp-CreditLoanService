@@ -64,8 +64,5 @@ public class PersonalCreditCardServiceImpl implements PersonalCreditCardService 
         return personalCreditCardRepository.findAllByPersonalClientDni(dni);
     }
 
-    @KafkaListener(topics = "CreditCardPersonal")
-    public void sendMessage(String message) {
-        log.info("Send data" + message);
-    }
+
 }
